@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Birdup - Open-source AI-powered automation platform by Team AGiXT. Experience the future of intelligent automation with cutting-edge tools.">
-    <meta name="keywords" content="automation, open source, AI autonomy, machine learning, intelligent agents, birdup">
-    <meta name="author" content="Birdup - Team AGiXT">
-    
-    <!-- Open Graph / Social Media -->
+    <meta name="description" content="Bird - Software Engineer at Team AGiXT. Building open-source AI automation tools.">
+    <meta name="author" content="Bird - Team AGiXT">
+
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Birdup | AI-Powered Automation Platform">
-    <meta property="og:description" content="Experience the future of intelligent automation with our open-source platform. Built by Team AGiXT.">
-    <meta property="og:image" content="https://birdup.io/og-image.png">
-    <meta property="og:url" content="https://birdup.io">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Birdup | AI-Powered Automation Platform">
-    <meta name="twitter:description" content="Experience the future of intelligent automation with our open-source platform.">
-    
-    <title>Birdup | AI-Powered Automation & Open Source Platform</title>
-    
-    <!-- Preconnect to external resources -->
+    <meta property="og:title" content="Bird | Software Engineer">
+    <meta property="og:description" content="Software Engineer at Team AGiXT. Building open-source AI automation tools.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bird | Software Engineer">
+    <meta name="twitter:description" content="Software Engineer at Team AGiXT. Building open-source AI automation tools.">
+
+    <title>Bird | Software Engineer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* CSS Variables for theming */
         :root {
             --bg-primary: #0a0e1a;
             --bg-secondary: #111827;
@@ -39,17 +32,8 @@
             --accent-primary: #3b82f6;
             --accent-secondary: #06b6d4;
             --accent-tertiary: #10b981;
-            --accent-warm: #f59e0b;
             --border-color: rgba(148, 163, 184, 0.1);
             --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
-            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
-            --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.3s ease;
         }
 
         [data-theme="light"] {
@@ -66,16 +50,10 @@
             --border-color: rgba(148, 163, 184, 0.2);
         }
 
-        /* Reset & Base */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
         }
 
         body {
@@ -83,20 +61,23 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
-            overflow-x: hidden;
-            line-height: 1.7;
-            transition: background var(--transition-normal), color var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: background 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Animated Background */
+        /* Subtle grid background */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
                 linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -104,1117 +85,242 @@
             z-index: 0;
         }
 
-        /* Navigation */
-        .navbar {
+        /* Ambient glow */
+        .glow {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all var(--transition-normal);
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .navbar.scrolled {
-            padding: 0.75rem 2rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        .nav-logo svg {
-            width: 36px;
-            height: 36px;
-            fill: var(--accent-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color var(--transition-fast);
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-primary);
-            transition: width var(--transition-normal);
-        }
-
-        .nav-link:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            background: var(--gradient-primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all var(--transition-normal);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all var(--transition-normal);
-        }
-
-        /* Hero Section */
-        .hero {
+        .container {
             position: relative;
             z-index: 1;
-            min-height: 100vh;
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 6rem 2rem 4rem;
-            text-align: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.25);
         }
 
-        .hero-content {
-            max-width: 900px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid var(--accent-tertiary);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--accent-tertiary);
-            margin-bottom: 2rem;
-            font-family: 'JetBrains Mono', monospace;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.2); }
-            50% { box-shadow: 0 0 20px 5px rgba(16, 185, 129, 0.1); }
-        }
-
-        .hero-badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-tertiary);
-            border-radius: 50%;
-            animation: blink 2s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .hero-logo-wrapper {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-primary);
-            border-radius: 24px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-        }
-
-        .hero-logo-wrapper svg {
-            width: 50px;
-            height: 50px;
+        .avatar svg {
+            width: 48px;
+            height: 48px;
             fill: white;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+        h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 800;
-            margin-bottom: 1.25rem;
-            line-height: 1.1;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-description {
+        .role {
             font-size: 1.125rem;
             color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 0.75rem;
         }
 
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-
-        .btn {
+        .team-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.625rem;
-            padding: 1rem 1.75rem;
-            border-radius: 14px;
-            font-weight: 600;
-            font-size: 1rem;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--accent-primary);
             text-decoration: none;
-            transition: all var(--transition-normal);
-            cursor: pointer;
-            border: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: opacity 0.2s ease;
         }
 
-        .btn-primary {
+        .team-link:hover {
+            opacity: 0.8;
+        }
+
+        .team-link svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .bio {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .link-primary {
             background: var(--gradient-primary);
             color: white;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+        .link-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
 
-        .btn-secondary {
+        .link-secondary {
             background: var(--bg-tertiary);
             color: var(--text-primary);
             border: 1px solid var(--border-color);
         }
 
-        .btn-secondary:hover {
+        .link-secondary:hover {
             border-color: var(--accent-primary);
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(59, 130, 246, 0.08);
             transform: translateY(-2px);
         }
 
-        .btn-accent {
-            background: var(--gradient-secondary);
-            color: white;
-        }
-
-        .btn-accent:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(6, 182, 212, 0.3);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            position: relative;
-            z-index: 1;
-            padding: 4rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .stats-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Features Section */
-        .features-section {
-            position: relative;
-            z-index: 1;
-            padding: 6rem 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            padding: 0.375rem 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-primary);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            color: var(--text-secondary);
-            font-size: 1.125rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all var(--transition-normal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform var(--transition-normal);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-primary);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--accent-primary);
-        }
-
-        .feature-card:nth-child(2) .feature-icon svg { fill: var(--accent-secondary); }
-        .feature-card:nth-child(3) .feature-icon svg { fill: var(--accent-tertiary); }
-
-        .feature-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about-section {
-            position: relative;
-            z-index: 1;
-            padding: 6rem 2rem;
-            background: var(--bg-secondary);
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-visual {
-            background: var(--gradient-primary);
-            border-radius: 24px;
-            padding: 3rem;
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .about-visual svg {
-            width: 120px;
-            height: 120px;
-            fill: white;
-            opacity: 0.9;
-        }
-
-        .about-text h2 {
-            font-size: clamp(2rem, 5vw, 2.75rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .about-feature svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--accent-tertiary);
-            flex-shrink: 0;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            position: relative;
-            z-index: 1;
-            padding: 6rem 2rem;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 3rem;
-            backdrop-filter: blur(16px);
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-        }
-
-        .form-input,
-        .form-textarea {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all var(--transition-fast);
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 640px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Footer */
         .footer {
             position: relative;
             z-index: 1;
-            padding: 4rem 2rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand {
-            max-width: 280px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo svg {
-            width: 32px;
-            height: 32px;
-            fill: var(--accent-primary);
-        }
-
-        .footer-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .footer-links h4 {
-            font-size: 1rem;
-            margin-bottom: 1.25rem;
-            color: var(--text-primary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-primary);
-        }
-
-        .social-footer {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            transition: all var(--transition-normal);
-        }
-
-        .social-icon:hover {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .social-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-top: 4rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        @media (max-width: 768px) {
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
-
-        /* Theme Toggle */
+        /* Theme toggle */
         .theme-toggle {
             position: fixed;
             top: 1.5rem;
             right: 1.5rem;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all var(--transition-normal);
+            transition: all 0.2s ease;
             z-index: 100;
             backdrop-filter: blur(10px);
         }
 
         .theme-toggle:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             border-color: var(--accent-primary);
         }
 
         .theme-toggle svg {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             stroke: var(--text-primary);
             fill: none;
             stroke-width: 2;
         }
 
-        /* Toast Notification */
-        #toast {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--accent-tertiary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 500;
-            opacity: 0;
-            transition: all var(--transition-normal);
-            z-index: 10000;
-        }
-
-        #toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Responsive Navigation */
-        @media (max-width: 900px) {
-            .nav-links, .nav-cta {
-                display: none;
+        @media (max-width: 480px) {
+            .links {
+                flex-direction: column;
+                align-items: center;
             }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 8rem;
-            }
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="#" class="nav-logo">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            Birdup
-        </a>
-        <ul class="nav-links">
-            <li><a href="#features" class="nav-link">Features</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <a href="https://x.com/birdup000" target="_blank" class="nav-cta">
-            Follow Updates
-        </a>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
+    <div class="glow"></div>
 
-    <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     </button>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-logo-wrapper">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                <span>Under Development</span>
-            </div>
-            <h1><a href="https://devxt.com" target="_blank" style="text-decoration: none; color: inherit;">Team AGiXT</a></h1>
-            <p class="hero-subtitle">AI-Powered Automation Platform</p>
-            <p class="hero-description">Experience the future of intelligent automation with our cutting-edge platform. Built for developers, researchers, and enthusiasts.</p>
-            <div class="hero-cta">
-                <a href="#features" class="btn btn-primary">
-                    Explore Features
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-                </a>
-                <a href="https://github.com/Josh-XT/AGiXT" target="_blank" class="btn btn-secondary">
-                    View on GitHub
-                </a>
-                <a href="https://bags.fm/FTuGahidZYp1dWiCuQXkX4guFkgcmtx7qvg1xvhmBAGS" target="_blank" class="btn btn-accent">
-                    Buy $BIRDUP Token
-                </a>
-            </div>
+    <div class="container">
+        <div class="avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
         </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="500">0</span>
-                <span class="stat-label">GitHub Stars</span>
-            </div>
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="1000">0</span>
-                <span class="stat-label">Community Members</span>
-            </div>
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="50">0</span>
-                <span class="stat-label">Contributors</span>
-            </div>
-            <div class="stat-item fade-in">
-                <span class="stat-number" data-target="100">0</span>
-                <span class="stat-label">% Open Source</span>
-            </div>
-        </div>
-    </section>
+        <h1>Bird</h1>
+        <p class="role">Software Engineer</p>
+        <a href="https://devxt.com" target="_blank" class="team-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Team AGiXT
+        </a>
+        <p class="bio">I build open-source AI automation tools. Passionate about intelligent agents, developer experience, and pushing the boundaries of what software can do.</p>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="section-header fade-in">
-            <span class="section-tag">What We Offer</span>
-            <h2 class="section-title">Powerful Features for Builders</h2>
-            <p class="section-description">Everything you need to develop, deploy, and scale intelligent automation with confidence.</p>
+        <div class="links">
+            <a href="https://github.com/Josh-XT/AGiXT" target="_blank" class="link link-primary">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.07-.729.07-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 0z"/></svg>
+                GitHub
+            </a>
+            <a href="https://x.com/birdup000" target="_blank" class="link link-secondary">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X / Twitter
+            </a>
         </div>
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15l-1.5-1.5L12 17l-1.5 1.5L9 15l3-3 3 3z"/></svg>
-                </div>
-                <h3 class="feature-title">Web-Based Platform</h3>
-                <p class="feature-description">No downloads required. Run intelligent automation workflows directly in your browser with real-time processing and rendering.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </div>
-                <h3 class="feature-title">AI-Powered Autonomy</h3>
-                <p class="feature-description">Integrate advanced AI algorithms for autonomous workflows, intelligent agents, and data-driven decision-making.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-                </div>
-                <h3 class="feature-title">Open Source Platform</h3>
-                <p class="feature-description">Contribute to the project, access source code, and build upon our foundation for your own intelligent applications.</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-content">
-            <div class="about-image fade-in">
-                <div class="about-visual">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-            </div>
-            <div class="about-text fade-in">
-                <span class="section-tag">About Us</span>
-                <h2>Built by Team AGiXT</h2>
-                <p>We are a passionate group of developers and AI enthusiasts dedicated to advancing open-source automation technology. Our mission is to make advanced AI tools accessible to everyone.</p>
-                <p>Birdup represents our commitment to innovation, community collaboration, and pushing the boundaries of what's possible in intelligent automation.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <span>Open Source First</span>
-                    </div>
-                    <div class="about-feature">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <span>Community Driven</span>
-                    </div>
-                    <div class="about-feature">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <span>Cutting Edge Tech</span>
-                    </div>
-                    <div class="about-feature">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <span>Global Impact</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="section-header fade-in">
-            <span class="section-tag">Get In Touch</span>
-            <h2 class="section-title">Join the Flock</h2>
-            <p class="section-description">Have questions or want to contribute? We'd love to hear from you.</p>
-        </div>
-        <div class="contact-container fade-in">
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell us more..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="justify-content: center;">
-                    Send Message
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="footer-logo">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    Birdup
-                </a>
-                <p class="footer-description">Open-source AI-powered automation platform. Building the future of intelligent systems together.</p>
-                <div class="social-footer">
-                    <a href="https://x.com/birdup000" target="_blank" class="social-icon" aria-label="X / Twitter">
-                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <a href="https://github.com/Josh-XT/AGiXT" target="_blank" class="social-icon" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.07-.729.07-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 0z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="https://github.com/Josh-XT/AGiXT" target="_blank">GitHub</a></li>
-                    <li><a href="https://x.com/birdup000" target="_blank">X / Twitter</a></li>
-                    <li><a href="https://bags.fm/FTuGahidZYp1dWiCuQXkX4guFkgcmtx7qvg1xvhmBAGS" target="_blank">$BIRDUP Token</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Built with 💙 by <a href="https://x.com/birdup000" target="_blank">@birdup000</a></p>
-            <p>&copy; 2024 Birdup. Open Source Forever.</p>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div id="toast">Message sent successfully!</div>
+    <div class="footer">
+        <p>&copy; 2026 Bird. Open Source Forever.</p>
+    </div>
 
     <script>
-        // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
-
         const savedTheme = localStorage.getItem('theme') || 'dark';
         html.setAttribute('data-theme', savedTheme);
 
         themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
 
-        // Keyboard shortcut (T)
         document.addEventListener('keydown', (e) => {
-            if (e.key === 't' || e.key === 'T') {
-                themeToggle.click();
-            }
+            if (e.key === 't' || e.key === 'T') themeToggle.click();
         });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Scroll animations with Intersection Observer
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        fadeElements.forEach(el => observer.observe(el));
-
-        // Stats counter animation
-        const stats = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    stats.forEach(stat => {
-                        const target = parseInt(stat.getAttribute('data-target'));
-                        const duration = 2000;
-                        const increment = target / (duration / 16);
-                        
-                        let current = 0;
-                        const updateCount = () => {
-                            current += increment;
-                            if (current < target) {
-                                stat.textContent = Math.floor(current).toLocaleString();
-                                requestAnimationFrame(updateCount);
-                            } else {
-                                stat.textContent = target.toLocaleString() + '+';
-                            }
-                        };
-                        updateCount();
-                    });
-                }
-            });
-        }, observerOptions);
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) statsObserver.observe(statsSection);
-
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-            
-            event.target.reset();
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle (basic implementation)
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                alert('Mobile menu functionality can be enhanced with a slide-out navigation panel.');
-            });
-        }
     </script>
 </body>
 </html>
