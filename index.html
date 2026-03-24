@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Birdup Drones - Open-source drone simulator and AI-powered autonomy platform. Experience the future of drone technology with our cutting-edge simulation tools.">
-    <meta name="keywords" content="drone simulator, open source, AI autonomy, UAV, flight simulation, birdup drones">
-    <meta name="author" content="Birdup Drones - Team AGiXT">
+    <meta name="description" content="Birdup - Open-source AI-powered automation platform by Team AGiXT. Experience the future of intelligent automation with cutting-edge tools.">
+    <meta name="keywords" content="automation, open source, AI autonomy, machine learning, intelligent agents, birdup">
+    <meta name="author" content="Birdup - Team AGiXT">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Birdup Drones | Open Source Drone Simulator">
-    <meta property="og:description" content="Experience the future of drone technology with our open-source simulation platform. Under development by Team AGiXT.">
+    <meta property="og:title" content="Birdup | AI-Powered Automation Platform">
+    <meta property="og:description" content="Experience the future of intelligent automation with our open-source platform. Built by Team AGiXT.">
     <meta property="og:image" content="https://birdup.io/og-image.png">
     <meta property="og:url" content="https://birdup.io">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Birdup Drones | Open Source Drone Simulator">
-    <meta name="twitter:description" content="Experience the future of drone technology with our open-source simulation platform.">
+    <meta name="twitter:title" content="Birdup | AI-Powered Automation Platform">
+    <meta name="twitter:description" content="Experience the future of intelligent automation with our open-source platform.">
     
-    <title>Birdup Drones | Open Source Drone Simulator & AI Autonomy</title>
+    <title>Birdup | AI-Powered Automation & Open Source Platform</title>
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -784,44 +784,6 @@
             }
         }
 
-        /* Floating Drones Animation */
-        .drones-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .drone {
-            position: absolute;
-            opacity: 0.08;
-            animation: fly 25s infinite linear;
-        }
-
-        .drone svg {
-            width: 40px;
-            height: 40px;
-            fill: var(--accent-primary);
-        }
-
-        .drone:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-        .drone:nth-child(2) { left: 30%; top: 60%; animation-delay: -5s; }
-        .drone:nth-child(3) { left: 50%; top: 40%; animation-delay: -10s; }
-        .drone:nth-child(4) { left: 70%; top: 20%; animation-delay: -15s; }
-        .drone:nth-child(5) { left: 85%; top: 60%; animation-delay: -8s; }
-
-        @keyframes fly {
-            0% { transform: translateX(0) translateY(0) rotate(0deg); }
-            25% { transform: translateX(30px) translateY(-20px) rotate(3deg); }
-            50% { transform: translateX(60px) translateY(0) rotate(0deg); }
-            75% { transform: translateX(30px) translateY(20px) rotate(-3deg); }
-            100% { transform: translateX(0) translateY(0) rotate(0deg); }
-        }
-
         /* Theme Toggle */
         .theme-toggle {
             position: fixed;
@@ -908,20 +870,11 @@
     </style>
 </head>
 <body>
-    <!-- Floating Drones Background -->
-    <div class="drones-container">
-        <div class="drone"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="drone"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="drone"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="drone"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="drone"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="#" class="nav-logo">
             <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            Birdup Drones
+            Birdup
         </a>
         <ul class="nav-links">
             <li><a href="#features" class="nav-link">Features</a></li>
@@ -952,9 +905,9 @@
                 <span class="hero-badge-dot"></span>
                 <span>Under Development</span>
             </div>
-            <h1>Birdup Drones</h1>
-            <p class="hero-subtitle">Open Source Drone Simulator & AI Autonomy Platform</p>
-            <p class="hero-description">Experience the future of drone technology with our cutting-edge simulation platform. Built for developers, researchers, and enthusiasts.</p>
+            <h1><a href="https://devxt.com" target="_blank" style="text-decoration: none; color: inherit;">Team AGiXT</a></h1>
+            <p class="hero-subtitle">AI-Powered Automation Platform</p>
+            <p class="hero-description">Experience the future of intelligent automation with our cutting-edge platform. Built for developers, researchers, and enthusiasts.</p>
             <div class="hero-cta">
                 <a href="#features" class="btn btn-primary">
                     Explore Features
@@ -964,7 +917,7 @@
                     View on GitHub
                 </a>
                 <a href="https://bags.fm/FTuGahidZYp1dWiCuQXkX4guFkgcmtx7qvg1xvhmBAGS" target="_blank" class="btn btn-accent">
-                    Buy $BDRONE Token
+                    Buy $BIRDUP Token
                 </a>
             </div>
         </div>
@@ -996,30 +949,30 @@
     <section id="features" class="features-section">
         <div class="section-header fade-in">
             <span class="section-tag">What We Offer</span>
-            <h2 class="section-title">Powerful Features for Drone Enthusiasts</h2>
-            <p class="section-description">Everything you need to simulate, develop, and deploy drone applications with confidence.</p>
+            <h2 class="section-title">Powerful Features for Builders</h2>
+            <p class="section-description">Everything you need to develop, deploy, and scale intelligent automation with confidence.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15l-1.5-1.5L12 17l-1.5 1.5L9 15l3-3 3 3z"/></svg>
                 </div>
-                <h3 class="feature-title">Web-Based Simulation</h3>
-                <p class="feature-description">No downloads required. Run complex drone simulations directly in your browser with real-time physics and rendering.</p>
+                <h3 class="feature-title">Web-Based Platform</h3>
+                <p class="feature-description">No downloads required. Run intelligent automation workflows directly in your browser with real-time processing and rendering.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
                 <h3 class="feature-title">AI-Powered Autonomy</h3>
-                <p class="feature-description">Integrate advanced AI algorithms for autonomous flight paths, obstacle avoidance, and intelligent decision-making.</p>
+                <p class="feature-description">Integrate advanced AI algorithms for autonomous workflows, intelligent agents, and data-driven decision-making.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon">
                     <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
                 </div>
                 <h3 class="feature-title">Open Source Platform</h3>
-                <p class="feature-description">Contribute to the project, access source code, and build upon our foundation for your own drone applications.</p>
+                <p class="feature-description">Contribute to the project, access source code, and build upon our foundation for your own intelligent applications.</p>
             </div>
         </div>
     </section>
@@ -1035,8 +988,8 @@
             <div class="about-text fade-in">
                 <span class="section-tag">About Us</span>
                 <h2>Built by Team AGiXT</h2>
-                <p>We are a passionate group of developers and drone enthusiasts dedicated to advancing open-source drone technology. Our mission is to make advanced simulation tools accessible to everyone.</p>
-                <p>Birdup Drones represents our commitment to innovation, community collaboration, and pushing the boundaries of what's possible in autonomous flight systems.</p>
+                <p>We are a passionate group of developers and AI enthusiasts dedicated to advancing open-source automation technology. Our mission is to make advanced AI tools accessible to everyone.</p>
+                <p>Birdup represents our commitment to innovation, community collaboration, and pushing the boundaries of what's possible in intelligent automation.</p>
                 <div class="about-features">
                     <div class="about-feature">
                         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -1100,9 +1053,9 @@
             <div class="footer-brand">
                 <a href="#" class="footer-logo">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    Birdup Drones
+                    Birdup
                 </a>
-                <p class="footer-description">Open-source drone simulator and AI-powered autonomy platform. Building the future of flight together.</p>
+                <p class="footer-description">Open-source AI-powered automation platform. Building the future of intelligent systems together.</p>
                 <div class="social-footer">
                     <a href="https://x.com/birdup000" target="_blank" class="social-icon" aria-label="X / Twitter">
                         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -1125,13 +1078,13 @@
                 <ul>
                     <li><a href="https://github.com/Josh-XT/AGiXT" target="_blank">GitHub</a></li>
                     <li><a href="https://x.com/birdup000" target="_blank">X / Twitter</a></li>
-                    <li><a href="https://bags.fm/FTuGahidZYp1dWiCuQXkX4guFkgcmtx7qvg1xvhmBAGS" target="_blank">$BDRONE Token</a></li>
+                    <li><a href="https://bags.fm/FTuGahidZYp1dWiCuQXkX4guFkgcmtx7qvg1xvhmBAGS" target="_blank">$BIRDUP Token</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>Built with 💙 by <a href="https://x.com/birdup000" target="_blank">@birdup000</a></p>
-            <p>&copy; 2024 Birdup Drones. Open Source Forever.</p>
+            <p>&copy; 2024 Birdup. Open Source Forever.</p>
         </div>
     </footer>
 
